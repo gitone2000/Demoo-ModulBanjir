@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/imgs/decaa.png" type="image/png">
+  <title>Beranda</title>
+  <!-- ======= Styles ====== -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- =============== Navigation ================ -->
+  <div class="container">
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+      
+      <div class="topbar">
+
+        <div class="header">
+          <img src="assets/imgs/decaa.png" alt="Logo Perusahaan" class="logo">
+          <h1 class="header-title">EARLY WARNING SYSTEM DECAA.ID</h1>
+        </div>
+
+      </div>
+
+      <!-- ================ Grafik Area ================= -->
+
+      <!-- chart header -->
+      <div class="chart-header">
+        <div id="chart8" class="chart-item">
+          <!-- Lamp -->
+          <!-- <div class="lamp-container">
+            <div class="lamp siren green"></div>
+            <div class="lamp siren yellow"></div>
+            <div class="lamp siren red"></div>
+          </div> -->
+
+          <div class="chart-top">
+
+            <div class="chart-item">
+              <!-- <h3>POS Pantau 2</h3> -->
+              <div class="cctv-online" onclick="openCCTV('assets/video/tegalombo.mp4', 'Cam 1')">
+                <video autoplay muted loop playsinline>
+                  <source src="assets/video/tegalombo.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <span class="status">ONLINE</span>
+                <span class="cam-id">Cam 1</span>
+                <span class="timestamp" id="timestamp2"></span>
+              </div>
+              <div id="chart2-ketinggian2" class="chart-gauge"></div>
+            </div>
+
+            <div class="chart-item">
+              <!-- <h3>POS Pantau 3</h3> -->
+              <div class="cctv-online" onclick="openCCTV('assets/video/arjosari.mp4', 'Cam 2')">
+                <video autoplay muted loop playsinline>
+                  <source src="assets/video/arjosari.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <span class="status">ONLINE</span>
+                <span class="cam-id">Cam 2</span>
+                <span class="timestamp" id="timestamp3"></span>
+              </div>
+              <div id="chart2-ketinggian3" class="chart-gauge"></div>
+            </div>
+
+            <div class="chart-item">
+              <!-- <h3>POS Pantau 4</h3> -->
+              <div class="cctv-online" onclick="openCCTV('assets/video/arjowinangun.mp4', 'Cam 3')">
+                <video autoplay muted loop playsinline>
+                  <source src="assets/video/arjowinangun.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <span class="status">ONLINE</span>
+                <span class="cam-id">Cam 3</span>
+                <span class="timestamp" id="timestamp4"></span>
+              </div>
+              <div id="chart2-ketinggian4" class="chart-gauge"></div>
+            </div>
+
+            <div class="chart-item">
+              <!-- <h3>POS Pantau 1</h3> -->
+              <div class="cctv-online" onclick="openCCTV('assets/video/kebonagung.mp4', 'Cam 4')">
+                <video autoplay muted loop playsinline>
+                  <source src="assets/video/kebonagung.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <span class="status">ONLINE</span>
+                <span class="cam-id">Cam 4</span>
+                <span class="timestamp" id="timestamp1"></span>
+              </div>
+              <div id="chart2-ketinggian1" class="chart-gauge"></div>
+            </div>
+
+          </div>
+
+          <div class="chart-bottom">
+            <div id="chart5" class="chart-item"></div>
+            <div id="chart6" class="chart-item"></div>
+            <div id="chart7" class="chart-item"></div>
+            <div id="chart4" class="chart-item"></div>
+          </div>
+
+          </div>
+        </div>
+
+        <!-- Modal Popup CCTV -->
+        <div id="cctvModal" class="cctv-modal">
+          <span class="close" onclick="closeCCTV()">&times;</span>
+          <div class="cctv-wrapper">
+            <video id="cctvPlayer" autoplay muted loop playsinline>
+              <source src="" type="video/mp4">
+              Browser Anda tidak mendukung video.
+            </video>
+            <span class="status">ONLINE</span>
+            <span class="cam-id" id="modalCamId"></span>
+            <span class="timestamp" id="modalTimestamp"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- ============================================== -->
+
+
+      <!-- =========== Scripts =========  -->
+      <script src="assets/js/main.js"></script>
+      <script src="assets/js/time.js"></script>
+      <script src="assets/js/modalcctv.js"></script>
+
+      <!-- ApexCharts -->
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+      <!-- ====== ionicons ======= -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+      <!-- Library Highcharts -->
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/highcharts-more.js"></script>
+      <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+      <!-- Highchart -->
+      <script src="assets/js/chart/chart1.js"></script>
+      <script src="assets/js/chart/chart2.js"></script>
+      <script src="assets/js/chart/chart3.js"></script>
+      <script src="assets/js/chart/chart4.js"></script>
+      <script src="assets/js/chart/chart5.js"></script>
+      <script src="assets/js/chart/chart6.js"></script>
+      <script src="assets/js/chart/chart7.js"></script>
+
+      <script>
+      var chartKetinggian1; // global
+      var chartKetinggian2; // global
+      var chartKetinggian3; // global
+      var chartKetinggian4; // global
+
+document.addEventListener("DOMContentLoaded", function () {
+  const gaugeOptions = {
+    chart: { type: "solidgauge" },
+    title: { text: "" },
+    pane: {
+      center: ["50%", "85%"],
+      size: "140%",
+      startAngle: -90,
+      endAngle: 90,
+      background: {
+        backgroundColor: "#f0f0f0",
+        innerRadius: "60%",
+        outerRadius: "100%",
+        shape: "arc",
+      },
+    },
+    tooltip: { enabled: false },
+    yAxis: {
+      stops: [
+        [0.1, "#33ff00"], // green
+        [0.5, "#fbff00"], // yellow
+        [0.9, "#ff0000"], // red
+      ],
+      lineWidth: 0,
+      tickWidth: 0,
+      minorTickInterval: null,
+      tickAmount: 2,
+      labels: { y: 16 },
+    },
+    plotOptions: {
+      solidgauge: {
+        dataLabels: { y: 5, borderWidth: 0 },
+      },
+    },
+    credits: { enabled: false },
+  };
+
+  // Gauge Ketinggian 1 (150 - 250 cm)
+  chartKetinggian1 = Highcharts.chart(
+    "chart2-ketinggian1",
+    Highcharts.merge(gaugeOptions, {
+      yAxis: { min: 0, max: 1500 },
+      title: { text: "KEBONAGUNG" },
+      series: [{
+        name: "Ketinggian",
+        data: [206],
+        dataLabels: {
+          useHTML: true,
+          format:
+            '<div style="text-align:center">' +
+              '<div style="font-size:14px; color:#666;">Ketinggian</div>' +
+              '<span style="font-size:22px; font-weight:bold;">{y:.1f}</span><br/>' +
+              '<span style="font-size:12px; opacity:0.6">cm</span>' +
+            '</div>',
+        },
+      }],
+    })
+  );
+
+  // Gauge Ketinggian 2 (150 - 300 cm)
+  chartKetinggian2 = Highcharts.chart(
+    "chart2-ketinggian2",
+    Highcharts.merge(gaugeOptions, {
+      yAxis: { min: 0, max: 1500 },
+      title: { text: "TEGALOMBO" },
+      series: [{
+        name: "Ketinggian",
+        data: [53],
+        dataLabels: {
+          useHTML: true,
+          format:
+            '<div style="text-align:center">' +
+              '<div style="font-size:14px; color:#666;">Ketinggian</div>' +
+              '<span style="font-size:22px; font-weight:bold;">{y:.1f}</span><br/>' +
+              '<span style="font-size:12px; opacity:0.6">cm</span>' +
+            '</div>',
+        },
+      }],
+    })
+  );
+
+  // Gauge Ketinggian 3 (150 - 300 cm)
+  chartKetinggian3 = Highcharts.chart(
+    "chart2-ketinggian3",
+    Highcharts.merge(gaugeOptions, {
+      yAxis: { min: 0, max: 1600 },
+      title: { text: "ARJOSARI" },
+      series: [{
+        name: "Ketinggian",
+        data: [364],
+        dataLabels: {
+          useHTML: true,
+          format:
+            '<div style="text-align:center">' +
+              '<div style="font-size:14px; color:#666;">Ketinggian</div>' +
+              '<span style="font-size:22px; font-weight:bold;">{y:.1f}</span><br/>' +
+              '<span style="font-size:12px; opacity:0.6">cm</span>' +
+            '</div>',
+        },
+      }],
+    })
+  );
+
+  // Gauge Ketinggian 4 (150 - 300 cm)
+  chartKetinggian4 = Highcharts.chart(
+    "chart2-ketinggian4",
+    Highcharts.merge(gaugeOptions, {
+      yAxis: { min: 0, max: 1600 },
+      title: { text: "ARJOWINGANUN" },
+      series: [{
+        name: "Ketinggian",
+        data: [378],
+        dataLabels: {
+          useHTML: true,
+          format:
+            '<div style="text-align:center">' +
+              '<div style="font-size:14px; color:#666;">Ketinggian</div>' +
+              '<span style="font-size:22px; font-weight:bold;">{y:.1f}</span><br/>' +
+              '<span style="font-size:12px; opacity:0.6">cm</span>' +
+            '</div>',
+        },
+      }],
+    })
+  );
+
+
+// Ambil elemen lampu
+const lampGreen = document.querySelector(".lamp.green");
+const lampYellow = document.querySelector(".lamp.yellow");
+const lampRed = document.querySelector(".lamp.red");
+
+function updateLamps() {
+  const val1 = chartKetinggian1.series[0].points[0].y;
+  const val2 = chartKetinggian2.series[0].points[0].y;
+  const val3 = chartKetinggian3.series[0].points[0].y;
+  const val4 = chartKetinggian4.series[0].points[0].y;
+
+  // Reset semua lampu
+  lampGreen.classList.remove("on");
+  lampYellow.classList.remove("on");
+  lampRed.classList.remove("on");
+
+  // Kondisi perumpamaan (tidak akan terpenuhi karena nilai > 700+)
+  const greenCond = val1 >= 700 || val2 >= 700 || val3 >= 700 || val4 >= 700;
+  const yellowCond = val1 >= 800 || val2 >= 800 || val3 >= 800 || val4 >= 800;
+  const redCond = val1 >= 900 || val2 >= 900 || val3 >= 900 || val4 >= 900;
+
+  if (greenCond) lampGreen.classList.add("on");
+  if (yellowCond) lampYellow.classList.add("on");
+  if (redCond) lampRed.classList.add("on");
+}
+
+
+// Simulasi update nilai dengan lonjakan cepat & ekstrem untuk presentasi
+setInterval(() => {
+  // Update Ketinggian 1
+  let point1 = chartKetinggian1.series[0].points[0];
+  let delta1 = (Math.random() - 0.5) * 5; // lonjakan besar
+  let newVal1 = point1.y + delta1;
+  newVal1 = Math.max(206, Math.min(212, newVal1));
+  point1.update(newVal1);
+
+  // Update Ketinggian 2
+  let point2 = chartKetinggian2.series[0].points[0];
+  let delta2 = (Math.random() - 0.5) * 5; // lonjakan besar
+  let newVal2 = point2.y + delta2;
+  newVal2 = Math.max(53, Math.min(59, newVal2));
+  point2.update(newVal2);
+
+  // Update Ketinggian 3
+  let point3 = chartKetinggian3.series[0].points[0];
+  let delta3 = (Math.random() - 0.5) * 5; // lonjakan besar
+  let newVal3 = point3.y + delta3;
+  newVal3 = Math.max(364, Math.min(369, newVal3));
+  point3.update(newVal3);
+
+  // Update Ketinggian 4
+  let point4 = chartKetinggian4.series[0].points[0];
+  let delta4 = (Math.random() - 0.5) * 5; // lonjakan besar
+  let newVal4 = point4.y + delta4;
+  newVal4 = Math.max(378, Math.min(382, newVal4));
+  point4.update(newVal4);
+
+  updateLamps();
+}, 5000); // update setiap  detik
+});
+</script>
+
+</body>
+
+</html>
